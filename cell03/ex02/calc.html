@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloon</title>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+
+<style>
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	div {
+		border-radius: 100%;
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		transition: .2s;
+		animation: 3s ease-in-out .5s infinite alternate movement;
+	}
+	@keyframes movement {
+		from {
+			transform: translateX(-100px);
+		}
+		33% {
+			transform: translateX(-100px) translateY(100px);
+		}
+		66% {
+			transform: translateX(200px) translateY(100px);
+		}
+		to {
+			transform: translateX(100px);
+		}
+	}
+</style>
+
+<script>
+	let size = 200;
+	const colors = ["red", "blue", "green"];
+	let ballon = document.querySelector('div');
+	let i = 0;
+
+	ballon.addEventListener('click', () => {
+		size = size >= 420 ? 200 : size + 10;
+		updateStyle(1);
+	})
+	ballon.addEventListener('mouseleave', () => {
+		if (size > 200)
+			size -= 5;
+		updateStyle(0);
+	})
+	const updateStyle = (direction) => {
+		ballon.style.width = size + "px";
+		ballon.style.height = size + "px";
+		if (direction == 1)
+			if (i++ == 2)
+				i = 0;
+		if (direction == 0)
+			if (i-- == 0)
+				i = 2;
+		ballon.style.backgroundColor = colors[i];
+	};
+</script>

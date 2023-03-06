@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balloon</title>
+</head>
+<body>
+	<input id="input1" type="text">
+	<select id="input2" name="" id="">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		<option value="%">%</option>
+	</select>
+	<input id="input3" type="text">
+	<input type="submit" value="Try me!">
+</body>
+</html>
+
+<style>
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		gap: 8px;
+	}
+</style>
+
+<script>
+	let submit = document.querySelector('input[type="submit"]')
+	submit.addEventListener('click', () => {
+		let result;
+		let value1 = document.querySelector('#input1').value;
+		let operateur = document.querySelector('#input2').value;
+		let value2 = document.querySelector('#input3').value;
+		
+		if (value1.isInteger)
+		if (operateur == "+")
+			result = parseInt(value1) + parseInt(value2)
+		else if (operateur == "-")
+			result = parseInt(value1) + parseInt(value2)
+		else if (operateur == "*")
+			result = parseInt(value1) + parseInt(value2)
+		else if (operateur == "/")
+			result = parseInt(value1) + parseInt(value2)
+		else if (operateur == "%")
+			result = parseInt(value1) + parseInt(value2)
+		// console.log(value1);
+		// console.log(operateur);
+		// console.log(value2);
+		alert(result)
+	})
+</script>

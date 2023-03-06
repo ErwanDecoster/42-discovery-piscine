@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Responsive</title>
+</head>
+<body>
+	<div class="tabs_container">
+		<div class="tab_element">
+			<h2>Mon artcile</h2>
+			<p>
+				texte texte texte les papillon
+			</p>
+		</div>
+		<div class="tab_element">
+			<h2>Mon artcile</h2>
+			<p>
+				texte texte texte les papillon
+			</p>
+		</div>
+	</div>
+</body>
+</html>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		margin: 0;
+	}
+	.tabs_container {
+		display: grid;
+		grid-template-columns: 1fr;
+		height: 100vh;
+	}
+	.tab_element {
+		background: #baaed5;
+		height: 100%;
+		padding: 10px;
+	}
+	.tab_element:nth-child(2) {
+		background: #aed2d5;
+	}
+	@media (min-width: 768px) {
+		.tabs_container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>

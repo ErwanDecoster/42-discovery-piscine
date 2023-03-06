@@ -1,0 +1,40 @@
+body {
+	margin: 0;
+	background: #122C34;
+}
+
+nav {
+	background-color: #F7F0F0;
+}
+
+nav ul {
+	display: flex;
+	gap: 10px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav ul li {
+	padding: 8px;
+	background-color: #F7F0F0;
+	transition: .2s;
+	position: relative;
+}
+
+nav ol {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	list-style: none;
+	padding: 0;
+	visibility: hidden;
+}
+
+nav li:hover {
+	background-color: #DB7F8E;
+}
+
+nav ul > li:hover ol{
+	visibility: visible;
+}
